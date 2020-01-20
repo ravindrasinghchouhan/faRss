@@ -3,6 +3,7 @@ title: "faRss_Discription"
 author: "Ravindra Singh Chouhan"
 date: "2020-01-20"
 output: rmarkdown::html_vignette
+
 @@ -16,6 +16,9 @@ The functions included in this packages are:
 |:------------------------|:------------------------------------------------|
 |`fars_read()`            |Read csv files                                   |
