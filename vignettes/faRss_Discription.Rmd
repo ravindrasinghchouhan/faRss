@@ -1,0 +1,40 @@
+---
+title: "faRss_Discription"
+author: "Ravindra Singh Chouhan"
+date: "2020-01-20"
+output: rmarkdown::html_vignette
+@@ -16,6 +16,9 @@ The functions included in this packages are:
+|:------------------------|:------------------------------------------------|
+|`fars_read()`            |Read csv files                                   |
+|`make_filename()`        |Make a file name                           |
+|`fars_read_years()`      |Load MONTH and year into R    |
+|`fars_summarize_years()` |Count the number of accidents per month and year                     |
+|`fars_map_state()`       |Plot the location of accidents on US maps    |
+
+## Data Source
+The functions contained in this package are created for manipulating data from  the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+@@ -39,5 +42,24 @@ make_filename(list(2013, 2014, 2015))
+make_filename(2014:2015)
+```
+
+## Load MONTH and year 
+This function reads yearly and monthly data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System and returns an error if the selected years are not written corrected, found in the working directory files or if the working directory is not set properly.
+```{r, example3, eval = FALSE}
+l <- fars_read_years(2013)
+```
+
+##Count the number of accidents per month and year
+This function load data from data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, binds the yearly data together, group by year and month, counts th number of accidents and spread the results with month in rows and a year per column.
+
+```{r, example4, eval = FALSE}
+head(fars_summarize_years(2013:2015))
+```
+
+## Plot the location of accidents on US maps
+This function load accident data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, into R for a specified year and state numbers, validate the parameters and plot the location of accidents on a US map.
+```{r, example5, eval = FALSE}
+fars_map_state(c(1:56),2014)
+```
+
+## References
+Peer Assignment in Coursera Course "Building R Packages". 
